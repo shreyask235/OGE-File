@@ -1,0 +1,15 @@
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\bin\Debug\net9.0\reading oge data.exe
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\bin\Debug\net9.0\reading oge data.deps.json
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\bin\Debug\net9.0\reading oge data.runtimeconfig.json
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\bin\Debug\net9.0\reading oge data.dll
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\bin\Debug\net9.0\reading oge data.pdb
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.AssemblyInfoInputs.cache
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.AssemblyInfo.cs
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.csproj.CoreCompileInputs.cache
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.sourcelink.json
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.dll
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\refint\reading oge data.dll
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.pdb
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\reading oge data.genruntimeconfig.cache
+C:\Users\Muddanna\OneDrive\Desktop\CS Capstone\reading oge data\obj\Debug\net9.0\ref\reading oge data.dll
