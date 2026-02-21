@@ -50,9 +50,35 @@ using System;
             p.ReadCSV("Francis Tuttle Identities_Basic.csv");
             Console.WriteLine(p.oge_data.Count);
 
-            var inactiveUsers = p.oge_data.Count(x => x.cloudLifecycleState == "inactive");
-            Console.WriteLine($"Number of inactive users: {inactiveUsers}");
+            var inactiveGroups =from employee in p.oge_data
+                                where employee.cloudLifecycleState.ToLower() == "inactive"
+                                group employee by employee.DisplayName into userGroup
+                                select new 
+                                {
+                                    DisplayName = userGroup.Key,
+                                    Records = userGroup.ToList()
+                                };
 
+            Console.WriteLine($"Employees with inactive status: ");
+            foreach (var user in inactiveGroups)
+            {
+                Console.WriteLine($"User: {user.DisplayName}");
+                foreach (var record in user.Records)
+                {
+                    if(!string.IsNullOrWhiteSpace(record.AccessDisplayName) && !string.IsNullOrWhiteSpace(record.AccessSourceName)){
+                        Console.WriteLine($"   Access: {record.AccessDisplayName} ({record.AccessSourceName})");
+                    }
+                }
+            }
+
+            var namesPerDepartment =from employee in p.oge_data
+                                    group employee.DisplayName by employee.Department into employeeNames
+                                    select employeeNames;
+
+            foreach (var user in inactiveGroups)
+            {
+                
+            }
         }
         void ReadCSV(string path)
         {
