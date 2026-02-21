@@ -1,7 +1,8 @@
 ﻿namespace CSharpAssignments;
 using System;
+using System.Text.RegularExpressions;
 
-    public struct ColumnData
+public struct ColumnData
     {
         public string DisplayName;
         public string FirstName;
@@ -71,14 +72,38 @@ using System;
                 }
             }
 
-            var namesPerDepartment =from employee in p.oge_data
-                                    group employee.DisplayName by employee.Department into employeeNames
-                                    select employeeNames;
+            var departments =from employee in p.oge_data
+                            where !string.IsNullOrWhiteSpace(employee.Department)
+                            group employee by employee.Department into deptGroup 
+                            orderby deptGroup.Key   
+                            select deptGroup.Key;
 
-            foreach (var user in inactiveGroups)
+            Console.WriteLine("Departments in the data:");
+            foreach (var dept in departments)
             {
-                
+                Console.WriteLine(dept);
             }
+
+            var inactiveByDept =  from employee in p.oge_data
+                                    where !string.IsNullOrWhiteSpace(employee.Department)
+                                    group employee by employee.Department into deptGroup 
+                                    select new
+                                    {
+                                        DepartmentName = deptGroup.Key,
+                                        inactiveCount = (
+                                                        from e in deptGroup
+                                                        where e.cloudLifecycleState == "inactive" && !string.IsNullOrWhiteSpace(e.AccessType)
+                                                        group e by e.DisplayName into empGroup
+                                                        select empGroup.Key
+                                                        ).Count()
+                                    };
+
+            Console.WriteLine("Departments and inactive employees with access:");
+            foreach (var dept in inactiveByDept)
+            {
+                Console.WriteLine($"{dept.DepartmentName}: {dept.inactiveCount} inactive employee with access");
+            }
+
         }
         void ReadCSV(string path)
         {
