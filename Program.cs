@@ -49,6 +49,10 @@ using System;
             Program p = new Program();
             p.ReadCSV("Francis Tuttle Identities_Basic.csv");
             Console.WriteLine(p.oge_data.Count);
+
+            var inactiveUsers = p.oge_data.Count(x => x.cloudLifecycleState == "inactive");
+            Console.WriteLine($"Number of inactive users: {inactiveUsers}");
+
         }
         void ReadCSV(string path)
         {
